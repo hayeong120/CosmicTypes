@@ -1,6 +1,6 @@
 ﻿namespace CosmicTypes
 {
-    partial class FormHistory
+    partial class FormAbout
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,10 @@
         {
             menuStrip1 = new MenuStrip();
             파일ToolStripMenuItem = new ToolStripMenuItem();
+            내역불러오기ToolStripMenuItem = new ToolStripMenuItem();
             끝내기ToolStripMenuItem = new ToolStripMenuItem();
             도움말ToolStripMenuItem = new ToolStripMenuItem();
             cosmicTypesToolStripMenuItem = new ToolStripMenuItem();
-            btnHome = new Button();
-            lbHistory = new ListBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,15 +48,22 @@
             // 
             // 파일ToolStripMenuItem
             // 
-            파일ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 끝내기ToolStripMenuItem });
+            파일ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 내역불러오기ToolStripMenuItem, 끝내기ToolStripMenuItem });
             파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
             파일ToolStripMenuItem.Size = new Size(43, 20);
             파일ToolStripMenuItem.Text = "파일";
+            파일ToolStripMenuItem.Click += 파일ToolStripMenuItem_Click;
+            // 
+            // 내역불러오기ToolStripMenuItem
+            // 
+            내역불러오기ToolStripMenuItem.Name = "내역불러오기ToolStripMenuItem";
+            내역불러오기ToolStripMenuItem.Size = new Size(180, 22);
+            내역불러오기ToolStripMenuItem.Text = "내역 불러오기";
             // 
             // 끝내기ToolStripMenuItem
             // 
             끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            끝내기ToolStripMenuItem.Size = new Size(110, 22);
+            끝내기ToolStripMenuItem.Size = new Size(180, 22);
             끝내기ToolStripMenuItem.Text = "끝내기";
             // 
             // 도움말ToolStripMenuItem
@@ -70,39 +76,18 @@
             // cosmicTypesToolStripMenuItem
             // 
             cosmicTypesToolStripMenuItem.Name = "cosmicTypesToolStripMenuItem";
-            cosmicTypesToolStripMenuItem.Size = new Size(148, 22);
+            cosmicTypesToolStripMenuItem.Size = new Size(180, 22);
             cosmicTypesToolStripMenuItem.Text = "Cosmic Types";
             // 
-            // btnHome
-            // 
-            btnHome.Location = new Point(12, 391);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(360, 48);
-            btnHome.TabIndex = 2;
-            btnHome.Text = "테스트 다시하기";
-            btnHome.UseVisualStyleBackColor = true;
-            // 
-            // lbHistory
-            // 
-            lbHistory.FormattingEnabled = true;
-            lbHistory.ItemHeight = 15;
-            lbHistory.Location = new Point(12, 27);
-            lbHistory.Name = "lbHistory";
-            lbHistory.Size = new Size(360, 364);
-            lbHistory.TabIndex = 3;
-            // 
-            // FormHistory
+            // FormAbout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 451);
-            Controls.Add(lbHistory);
-            Controls.Add(btnHome);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MainMenuStrip = menuStrip1;
             MaximizeBox = false;
-            Name = "FormHistory";
+            Name = "FormAbout";
             Text = "CosmicTypes 3111장하영";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -114,10 +99,9 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem 파일ToolStripMenuItem;
+        private ToolStripMenuItem 내역불러오기ToolStripMenuItem;
         private ToolStripMenuItem 끝내기ToolStripMenuItem;
         private ToolStripMenuItem 도움말ToolStripMenuItem;
         private ToolStripMenuItem cosmicTypesToolStripMenuItem;
-        private Button btnHome;
-        private ListBox lbHistory;
     }
 }

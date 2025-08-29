@@ -159,8 +159,9 @@
             // cosmicTypesToolStripMenuItem
             // 
             cosmicTypesToolStripMenuItem.Name = "cosmicTypesToolStripMenuItem";
-            cosmicTypesToolStripMenuItem.Size = new Size(146, 22);
+            cosmicTypesToolStripMenuItem.Size = new Size(180, 22);
             cosmicTypesToolStripMenuItem.Text = "Cosmic types";
+            cosmicTypesToolStripMenuItem.Click += cosmicTypesToolStripMenuItem_Click;
             // 
             // Form1
             // 
