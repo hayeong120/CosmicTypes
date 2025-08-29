@@ -82,6 +82,7 @@
             btnShowResult.TabIndex = 4;
             btnShowResult.Text = "결과 보러가기";
             btnShowResult.UseVisualStyleBackColor = true;
+            btnShowResult.Click += btnShowResult_Click;
             // 
             // tbBlood
             // 
@@ -140,13 +141,13 @@
             // 내역불러오기ToolStripMenuItem
             // 
             내역불러오기ToolStripMenuItem.Name = "내역불러오기ToolStripMenuItem";
-            내역불러오기ToolStripMenuItem.Size = new Size(180, 22);
+            내역불러오기ToolStripMenuItem.Size = new Size(150, 22);
             내역불러오기ToolStripMenuItem.Text = "내역 불러오기";
             // 
             // 끝내기ToolStripMenuItem
             // 
             끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            끝내기ToolStripMenuItem.Size = new Size(180, 22);
+            끝내기ToolStripMenuItem.Size = new Size(150, 22);
             끝내기ToolStripMenuItem.Text = "끝내기";
             // 
             // 도움말ToolStripMenuItem
@@ -159,7 +160,7 @@
             // cosmicTypesToolStripMenuItem
             // 
             cosmicTypesToolStripMenuItem.Name = "cosmicTypesToolStripMenuItem";
-            cosmicTypesToolStripMenuItem.Size = new Size(180, 22);
+            cosmicTypesToolStripMenuItem.Size = new Size(146, 22);
             cosmicTypesToolStripMenuItem.Text = "Cosmic types";
             cosmicTypesToolStripMenuItem.Click += cosmicTypesToolStripMenuItem_Click;
             // 

@@ -1,4 +1,5 @@
-﻿namespace CosmicTypes
+﻿
+namespace CosmicTypes
 {
     partial class FormAbout
     {
@@ -93,6 +94,11 @@
             menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void 파일ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

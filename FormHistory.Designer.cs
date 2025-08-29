@@ -57,7 +57,7 @@
             // 끝내기ToolStripMenuItem
             // 
             끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            끝내기ToolStripMenuItem.Size = new Size(110, 22);
+            끝내기ToolStripMenuItem.Size = new Size(180, 22);
             끝내기ToolStripMenuItem.Text = "끝내기";
             // 
             // 도움말ToolStripMenuItem
@@ -70,7 +70,7 @@
             // cosmicTypesToolStripMenuItem
             // 
             cosmicTypesToolStripMenuItem.Name = "cosmicTypesToolStripMenuItem";
-            cosmicTypesToolStripMenuItem.Size = new Size(148, 22);
+            cosmicTypesToolStripMenuItem.Size = new Size(180, 22);
             cosmicTypesToolStripMenuItem.Text = "Cosmic Types";
             // 
             // btnHome
@@ -79,7 +79,7 @@
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(360, 48);
             btnHome.TabIndex = 2;
-            btnHome.Text = "테스트 다시하기";
+            btnHome.Text = "테스트 해보기";
             btnHome.UseVisualStyleBackColor = true;
             // 
             // lbHistory

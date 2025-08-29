@@ -2,7 +2,7 @@ namespace CosmicTypes
 {
     public partial class Form1 : Form
     {
-        List<string> results;
+        private List<string> results = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -13,12 +13,17 @@ namespace CosmicTypes
             try
             {
                 string filename = "results.csv";
-                results = File.ReadAllLines(filename).ToList();
-            }
-            catch (FileNotFoundException ex)
-            {
-                MessageBox.Show($"파일이 없습니다.\n{ex.Message}", "파일이 없는 오류!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // 파일 존재 여부 확인으로 FileNotFoundException 방지
+                if (File.Exists(filename))
+                {
+                    results = File.ReadAllLines(filename).ToList();
+                }
+                else
+                {
+                    // 파일이 없으면 빈 리스트로 초기화하고 사용자에게 알림
+                    MessageBox.Show($"파일이 없습니다.\n{filename}", "파일 오류",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -34,8 +39,41 @@ namespace CosmicTypes
 
         private void btnShowResult_Click(object sender, EventArgs e)
         {
-            string zodiac = tbZodiac.Text;
-            string blood = tbBlood.Text;
+            string zodiac = tbZodiac.Text.Trim();
+            string blood = tbBlood.Text.Trim().ToUpper(); // 혈액형은 대문자 처리
+
+            if (string.IsNullOrWhiteSpace(zodiac) || string.IsNullOrWhiteSpace(blood))
+            {
+                MessageBox.Show("별자리와 혈액형을 모두 입력하세요!", "입력 오류",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // results 리스트가 null이 아닌 빈 리스트이므로 안전하게 FirstOrDefault 사용 가능
+            string result = results.FirstOrDefault(r =>
+            {
+                var cols = r.Split('|');
+                // cols가 2개 미만일 경우 IndexOutOfRangeException 방지
+                if (cols.Length < 3) return false;
+                return cols[0].Trim() == zodiac && cols[1].Trim() == blood;
+            });
+
+            if (result != null)
+            {
+                string advice = result.Split('|')[2].Trim();
+
+                // FormResult 폼을 직접 띄움
+                FormResult resultForm = new FormResult(zodiac, blood, advice);
+                resultForm.ShowDialog(); // Show() 대신 ShowDialog()를 사용하여 모달 창으로 표시
+
+                // history.csv에 저장
+                File.AppendAllText("history.csv", $"{DateTime.Now}|{zodiac}|{blood}|{advice}{Environment.NewLine}");
+            }
+            else
+            {
+                MessageBox.Show("해당 별자리와 혈액형에 맞는 결과가 없습니다.", "검색 실패",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
