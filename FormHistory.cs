@@ -13,11 +13,9 @@ namespace CosmicTypes
 {
     public partial class FormHistory : Form
     {
-        List<string> history;
-        Form1 form1;
-        public FormHistory(Form1 form)
+        private List<string> history = new List<string>();
+        public FormHistory()
         {
-            form1 = form;
             InitializeComponent();
             UpdateHistory();
         }
@@ -57,14 +55,8 @@ namespace CosmicTypes
             lbHistory.Items.Clear();
             if (history != null)
             {
-                lbHistory.Items.AddRange(history.ToArray());
+                lbHistory.Items.AddRange(history.Reverse<string>().ToArray());
             }
-        }
-
-        private void cosmicTypesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAbout form = new FormAbout();
-            form.ShowDialog();
         }
     }
 }

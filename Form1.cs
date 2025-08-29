@@ -79,15 +79,9 @@ namespace CosmicTypes
 
         private void 내역불러오기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormHistory form = Application.OpenForms["FormHistory"] as FormHistory;
-            if (form != null)
+            using (FormHistory form = new FormHistory())
             {
-                form.Activate();
-            }
-            else
-            {
-                form = new FormHistory(this);
-                form.Show();
+                form.ShowDialog();
             }
         }
 

@@ -35,6 +35,7 @@ namespace CosmicTypes
             끝내기ToolStripMenuItem = new ToolStripMenuItem();
             도움말ToolStripMenuItem = new ToolStripMenuItem();
             cosmicTypesToolStripMenuItem = new ToolStripMenuItem();
+            listBox1 = new ListBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,14 +78,25 @@ namespace CosmicTypes
             // cosmicTypesToolStripMenuItem
             // 
             cosmicTypesToolStripMenuItem.Name = "cosmicTypesToolStripMenuItem";
-            cosmicTypesToolStripMenuItem.Size = new Size(180, 22);
+            cosmicTypesToolStripMenuItem.Size = new Size(148, 22);
             cosmicTypesToolStripMenuItem.Text = "Cosmic Types";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Items.AddRange(new object[] { "🌌 CosmicTypes", "CosmicTypes는 별자리(12)와 혈액형(4)을 조합해", "총 144가지 성격 분석과 조언을 제공하는 프로젝트입니다. ✨", "", "🔮 특징", "🌠 별자리 × 혈액형 기반 성격 분석", "💫 144가지 고유한 성격 해석", "📜 짧은 키워드가 아닌 조언 형태의 긴 글 제공", "🎨 포춘텔러 감성의 상징적 디자인", "", "🚀 사용 방법", "본인의 별자리 선택 (양자리 → 물고기자리)", "본인의 혈액형 선택 (A, B, O, AB)", "결과로 맞춤형 성격 해석과 조언 확인", "", "⚠️ 안내", "이 프로젝트는 재미와 엔터테인먼트용으로 제작되었습니다.", "과학적 근거가 없으니 참고용으로만 즐겨주세요!" });
+            listBox1.Location = new Point(12, 27);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(360, 409);
+            listBox1.TabIndex = 1;
             // 
             // FormAbout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 451);
+            Controls.Add(listBox1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
@@ -109,5 +121,6 @@ namespace CosmicTypes
         private ToolStripMenuItem 끝내기ToolStripMenuItem;
         private ToolStripMenuItem 도움말ToolStripMenuItem;
         private ToolStripMenuItem cosmicTypesToolStripMenuItem;
+        private ListBox listBox1;
     }
 }
