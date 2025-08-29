@@ -140,13 +140,13 @@
             // 내역불러오기ToolStripMenuItem
             // 
             내역불러오기ToolStripMenuItem.Name = "내역불러오기ToolStripMenuItem";
-            내역불러오기ToolStripMenuItem.Size = new Size(150, 22);
+            내역불러오기ToolStripMenuItem.Size = new Size(180, 22);
             내역불러오기ToolStripMenuItem.Text = "내역 불러오기";
             // 
             // 끝내기ToolStripMenuItem
             // 
             끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            끝내기ToolStripMenuItem.Size = new Size(150, 22);
+            끝내기ToolStripMenuItem.Size = new Size(180, 22);
             끝내기ToolStripMenuItem.Text = "끝내기";
             // 
             // 도움말ToolStripMenuItem
@@ -166,7 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(384, 450);
+            ClientSize = new Size(384, 451);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
